@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <fr.emn.jgobley_books.BookItemView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -13,7 +12,6 @@
         android:orientation="horizontal"
         android:padding="5dip" >
 
-        <!--  ListRow Left sied Thumbnail image -->
         <LinearLayout android:id="@+id/thumbnail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -29,7 +27,7 @@
 
         </LinearLayout>
 
-        <!-- Title Of Song-->
+        <!-- Book name-->
         <TextView
             android:id="@+id/nameTextView"
             android:layout_width="wrap_content"
@@ -42,7 +40,7 @@
             android:textSize="15dip"
             android:textStyle="bold"/>
 
-        <!-- Artist Name -->
+        <!-- Book author -->
         <TextView
             android:id="@+id/authorTextView"
             android:layout_width="fill_parent"
@@ -54,7 +52,7 @@
             android:layout_toRightOf="@+id/thumbnail"
             android:text="Unknown author" />
 
-        <!-- Rightend Duration -->
+        <!-- Book price -->
         <TextView
             android:id="@+id/priceTextView"
             android:layout_width="wrap_content"
@@ -69,9 +67,14 @@
             android:textStyle="bold"/>
 
         <!-- Rightend Arrow -->
-        <ImageView android:layout_width="wrap_content"
+        <!--<ImageView android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@android:drawable/ic_menu_more"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"/>-->
+        <ImageView android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/more"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"/>
 
