@@ -9,14 +9,14 @@ public class Book implements Parcelable{
     public final String title;
     public final String author;
     public final float price;
-    public final String coverURL;
+    public final String cover;
 
-    public Book(String isbn, String title, String author, float price, String coverURL) {
+    public Book(String isbn, String title, String author, float price, String cover) {
         this.isbn = isbn != null ? isbn : "";
         this.title = title != null ? title : "";
         this.author = author != null ? author : "";
         this.price = price;
-        this.coverURL = coverURL != null ? coverURL : "";
+        this.cover = cover != null ? cover : "";
     }
 
     protected Book(Parcel in) {
@@ -24,7 +24,7 @@ public class Book implements Parcelable{
         title = in.readString();
         author = in.readString();
         price = in.readFloat();
-        coverURL = in.readString();
+        cover = in.readString();
     }
 
     @Override
@@ -34,7 +34,6 @@ public class Book implements Parcelable{
 
         Book book = (Book) o;
 
-        if (Float.compare(book.price, price) != 0) return false;
         return title.equals(book.title) && author.equals(book.author) && isbn.equals(book.isbn);
 
     }
@@ -63,6 +62,6 @@ public class Book implements Parcelable{
         dest.writeString(title);
         dest.writeString(author);
         dest.writeFloat(price);
-        dest.writeString(coverURL);
+        dest.writeString(cover);
     }
 }

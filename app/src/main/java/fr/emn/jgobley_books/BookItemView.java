@@ -51,9 +51,9 @@ public class BookItemView extends LinearLayout {
 
     public void bindView(final Book book) {
         // TODO setText()
-        if(book.coverURL != null && ! book.coverURL.equals("")) {
+        if(book.cover != null && ! book.cover.equals("")) {
             Picasso.with(context)
-                    .load(book.coverURL)
+                    .load(book.cover)
                     .into(coverImageView);
         }
         titleTextView.setText(book.title);

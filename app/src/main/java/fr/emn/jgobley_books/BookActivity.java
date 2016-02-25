@@ -40,10 +40,10 @@ public class BookActivity extends AppCompatActivity {
             detailIsbnTextView.setText(book.isbn);
         }
 
-        if(book.coverURL != null && !book.coverURL.equals("")) {
+        if(book.cover != null && !book.cover.equals("")) {
             ImageView detailCoverImageView = (ImageView) findViewById(R.id.detailCoverImageView);
             Picasso.with(this)
-                    .load(book.coverURL)
+                    .load(book.cover)
                     .into(detailCoverImageView);
         }
 
