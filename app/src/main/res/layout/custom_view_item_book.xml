@@ -7,6 +7,7 @@
     android:padding="10dp">
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/bookLayout"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -20,7 +21,7 @@
             android:layout_marginRight="5dip">
 
             <ImageView
-                android:id="@+id/list_image"
+                android:id="@+id/coverImageView"
                 android:layout_width="50dip"
                 android:layout_height="50dip"
                 android:src="@drawable/defaultbookcover"/>
@@ -29,7 +30,7 @@
 
         <!-- Book name-->
         <TextView
-            android:id="@+id/nameTextView"
+            android:id="@+id/titleTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignTop="@+id/thumbnail"
@@ -45,7 +46,7 @@
             android:id="@+id/authorTextView"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/nameTextView"
+            android:layout_below="@id/titleTextView"
             android:textColor="#343434"
             android:textSize="10dip"
             android:layout_marginTop="1dip"
@@ -58,7 +59,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:layout_alignTop="@id/nameTextView"
+            android:layout_alignTop="@id/titleTextView"
             android:gravity="right"
             android:text="free"
             android:layout_marginRight="5dip"

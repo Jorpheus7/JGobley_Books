@@ -1,13 +1,30 @@
 package fr.emn.jgobley_books;
 
-public class Book {
+import android.os.Parcel;
+import android.os.Parcelable;
 
-    public final String name;
+public class Book implements Parcelable{
+
+    public final String isbn;
+    public final String title;
+    public final String author;
     public final float price;
+    public final String coverURL;
 
-    public Book(String name, float price) {
-        this.name = name;
+    public Book(String isbn, String title, String author, float price, String coverURL) {
+        this.isbn = isbn != null ? isbn : "";
+        this.title = title != null ? title : "";
+        this.author = author != null ? author : "";
         this.price = price;
+        this.coverURL = coverURL != null ? coverURL : "";
+    }
+
+    protected Book(Parcel in) {
+        isbn = in.readString();
+        title = in.readString();
+        author = in.readString();
+        price = in.readFloat();
+        coverURL = in.readString();
     }
 
     @Override
@@ -18,14 +35,34 @@ public class Book {
         Book book = (Book) o;
 
         if (Float.compare(book.price, price) != 0) return false;
-        return name.equals(book.name);
+        return title.equals(book.title) && author.equals(book.author) && isbn.equals(book.isbn);
 
     }
 
+
+    public static final Creator<Book> CREATOR = new Creator<Book>() {
+        @Override
+        public Book createFromParcel(Parcel in) {
+            return new Book(in);
+        }
+
+        @Override
+        public Book[] newArray(int size) {
+            return new Book[size];
+        }
+    };
+
     @Override
-    public int hashCode() {
-        int result = name.hashCode();
-        result = 31 * result + (price != +0.0f ? Float.floatToIntBits(price) : 0);
-        return result;
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(isbn);
+        dest.writeString(title);
+        dest.writeString(author);
+        dest.writeFloat(price);
+        dest.writeString(coverURL);
     }
 }
