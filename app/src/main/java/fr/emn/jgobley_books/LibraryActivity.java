@@ -55,18 +55,6 @@ public class LibraryActivity extends AppCompatActivity {
 
     }
 
-    @Override
-    protected void onSaveInstanceState(Bundle outstate){
-        outstate.putParcelableArrayList(BOOKS, books);
-        super.onSaveInstanceState(outstate);
-    }
-
-    @Override
-    protected void onRestoreInstanceState(Bundle savedInstanceState){
-        super.onRestoreInstanceState(savedInstanceState);
-        books = savedInstanceState.getParcelableArrayList(BOOKS);
-    }
-
     /*private List<Book> getBooks() {
         ArrayList<Book> books = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
